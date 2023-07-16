@@ -4,6 +4,7 @@ let uncorrects = 0;
 
 const operations = ['+', '-', '*'];
 let currentOperationIndex = Math.floor(Math.random() * operations.length);
+document.getElementById('operation').innerText = operations[currentOperationIndex];
 let operationMix = true;
 
 randomNumbers();
@@ -39,9 +40,10 @@ function check() {
             break;
     }
     if (answer == correctAnswer) {
-        answerInput.style.background = 'green';
         corrects++;
         document.getElementById('correct').innerText = corrects;
+        answerInput.classList.remove('uncorrect');
+        refresh();
     } else {
         uncorrects++;
         document.getElementById('uncorrect').innerText = uncorrects;
