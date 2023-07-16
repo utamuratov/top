@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="footer">
+        <div class="d-flex flex-direction-column" title="Ishorani almashtirish!?">
+            <button class="btn-opr " onclick="chooseOperationMixOrNot(this, false, 0)">+</button>
+            <button class="btn-opr" onclick="chooseOperationMixOrNot(this, false, 1)">-</button>
+            <button class="btn-opr" onclick="chooseOperationMixOrNot(this, false, 2)">*</button>
+            <button class="btn-opr active" onclick="chooseOperationMixOrNot(this, true)">Mix</button>
+        </div>
+        <div class="d-flex flex-direction-column" style="margin-top: 20px;" title="Shu oraliqdagi sonlar chiqadi">
+            <input type="number" id="min" class="min-max-input" value="0">
+            <input type="number" id="max" class="min-max-input" value="10">
+        </div>
+    </div>
+    <div class="box">
+
+        <div class="d-flex statistics">
+            <p style="color: green;">To'g'ri: <span id="correct">0</span></p>
+            <p style="color: red;">Noto'g'ri: <span id="uncorrect">0</span></p>
+        </div>
+        <div class="d-flex" style="width:  100%; align-items: center;">
+
+            <input type="number" id="first">
+            <span class="operation" id="operation" onclick="changeOperation(this)">+</span>
+            <input type="number" id="second">
+            <span class="operation">=</span>
+            <input type="number" id="answer" style="flex-grow: 1;">
+        </div>
+        <div class="button-container">
+            <button onclick="check()">Tekshir</button>
+            <button onclick="refresh()">Yangilash</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
